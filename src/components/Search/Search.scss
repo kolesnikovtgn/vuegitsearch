@@ -1,0 +1,75 @@
+.main {
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 36px;
+}
+
+.search {
+
+}
+
+.container {
+  &-column {
+    display: flex;
+    flex-direction: column;
+  }
+  &-row {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.search__rep {
+  border:none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-appearance: none;
+  width: 205px;
+  outline: none;
+  border-radius: 0;
+  border-bottom: 1px solid #0366D6;
+  background: url(../../assets/Polygon.png) no-repeat right;
+}
+
+.search__lang {
+  border:none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-appearance: none;
+  width: 205px;
+  margin-left: 25px;
+  outline: none;
+  border-radius: 0;
+  border-bottom: 1px solid #0366D6;
+  background: url(../../assets/Polygon.png) no-repeat right;
+}
+
+.search__input {
+  width: 336px;
+  border: none;
+  border-bottom: 1px solid #0366D6;
+  outline: none;
+  margin-left: 25px;
+}
+
+.search__btn {
+  width: 129px;
+  height: 36px;
+  margin-left: 31px;
+  background-color: #0366D6;
+}
+
+.search__btn-text {
+  color: #FFFFFF;
+  font-size: 1.45rem;
+  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+.q {
+  display: flex;
+  justify-content: flex-end;
+}
