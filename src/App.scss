@@ -71,14 +71,21 @@ html {
   margin: 20px 31px 0 0;
   &-search {
     margin-right: 19px;
-    color: $header_text1-theme;
+    //color: $header_text1-theme;
+    color: $header_text2-theme;
     font-weight: bold;
     font-size: 1.6rem;
+    text-decoration: none;
   }
   &-mylist {
     color: $header_text2-theme;
     font-size: 1.6rem;
+    text-decoration: none;
   }
+}
+
+.router-link-active {
+  color: $header_text1-theme;
 }
 
 .footer {

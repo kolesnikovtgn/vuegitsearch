@@ -14,13 +14,16 @@
             <button class="search__btn"><p class="search__btn-text">SEARCH</p></button>
           </div>
     </div>
-      <!--<app-list></app-list>-->
+      <List />
   </div>
 </template>
 
 <script>
+  import List from '../List/List';
+
   export default {
     name: 'Search',
+    components: { List },
     props: { }
   }
 </script>

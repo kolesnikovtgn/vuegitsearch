@@ -1,0 +1,42 @@
+.main {
+  width: 960px;
+  margin: 0 auto;
+  &__menu {
+    height: 90px;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid #E1E4E8;
+    &-block {
+      margin: 27px 12px 0 0;
+    }
+    &-list {
+      margin-top: 27px;
+    }
+
+  }
+}
+
+.container {
+  &-column {
+    display: flex;
+    flex-direction: column;
+  }
+  &-row {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.active {
+  color: #3C4146;
+}
+
+.not-active {
+  color: #E0E0E0;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

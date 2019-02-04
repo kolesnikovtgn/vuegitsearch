@@ -1,13 +1,16 @@
 <template>
   <div class="main">
     <p class="main__text">My List</p>
-    <!--<app-myrecord></app-myrecord>-->
+    <Myrecord/>
   </div>
 </template>
 
 <script>
+  import Myrecord from '../Myrecord/Myrecord';
+
   export default {
     name: 'Mylist',
+    components: { Myrecord },
     props: { }
   }
 </script>

@@ -13,7 +13,7 @@
         </div>
         <div class="header__nav container-row">
           <router-link to="/search" class="header__nav-search">Search</router-link>
-          <router-link to="/mylist" class="header__nav-mylist">My List</router-link>
+          <router-link to="/mylist" class="header__nav-mylist">MyList</router-link>
         </div>
       </div>
       <router-view></router-view>
