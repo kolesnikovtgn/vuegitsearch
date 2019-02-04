@@ -2,12 +2,11 @@
   <div class="main">
     <div class="search container-row">
       <select class="search__rep">
-        <option>Type</option>
-        <option>repositories</option>
+        <option v-for="rep in this.repositoriesSelect" v-bind:key="rep">{{rep}}</option>
       </select>
         <select class="search__lang">
           <option hidden selected>Language</option>
-          <option></option>
+          <option v-for="lang in this.languageSelect" v-bind:key="lang">{{lang}}</option>
         </select>
         <input class="search__input" placeholder="Type here for search" type="text">
           <div class="q">
@@ -31,6 +30,12 @@
   export default {
     name: 'Search',
     components: { List },
+    data: function () {
+      return {
+        repositoriesSelect: ['Type', 'repositories'],
+        languageSelect: ['javascript', 'css', 'php', 'ruby', 'c++', 'python', 'c#', 'java', 'go', 'haskel'],
+      }
+    },
     props: { },
 //    computed: {
 //        ...mapGetters({
