@@ -1,31 +1,31 @@
 <template>
   <div class="prj container-column">
     <div class="prj__rating container-row">
-      <div class="prj__rating-language">Language</div>
+      <div class="prj__rating-language">{{language}}</div>
       <div class="prj__rating-block container-row">
         <img class="prj__rating-block-img" src="../../assets/star.png">
-        <div class="prj__rating-block-stars">123</div>
+        <div class="prj__rating-block-stars">{{stargazers_count}}</div>
       </div>
     </div>
     <div class="prj__text container-column">
       <div class="prj__text-name">
-        MyProjectName
+        {{name}}
       </div>
       <div class="prj__text-describe">
-        DescribeThisProject
+        {{description}}
       </div>
       <div class="prj__text-taglist container-row">
         <div class="prj__text-taglist-tag">
-          Javascript
+          {{langSearch}}
         </div>
         <div class="prj__text-taglist-tag">
-          CMS
+          {{querySearch}}
         </div>
       </div>
     </div>
     <div class="prj__button container-column">
-      <button class="prj__button-add"><p class="prj__button-add-text">ADD TO LIST</p></button>
-      <button class="prj__button-delete"><p class="prj__button-delete-text"> REMOVE FROM LIST</p></button>
+      <button v-if="!myList" class="prj__button-add"><p class="prj__button-add-text">ADD TO LIST</p></button>
+      <button v-if="myList" class="prj__button-delete"><p class="prj__button-delete-text"> REMOVE FROM LIST</p></button>
     </div>
   </div>
 
@@ -34,7 +34,8 @@
 <script>
   export default {
     name: 'Block',
-    props: { }
+    props: ['name', 'language', 'querySearch',
+      'description', 'langSearch', 'stargazers_count', 'myList'],
   }
 </script>
 

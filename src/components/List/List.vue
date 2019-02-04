@@ -9,16 +9,10 @@
     </span>
     </div>
     <div v-if="isActive" class="list">
-      <Block />
-      <Block />
-      <Block />
-      <Block />
+      <Block v-for="repo in reposData" v-bind:key="repo.id" v-bind="repo" />
     </div>
     <div v-if="!isActive" class="list">
-      <LineBlock />
-      <LineBlock />
-      <LineBlock />
-      <LineBlock />
+      <LineBlock v-for="repo in reposData" v-bind:key="repo.id" v-bind="repo" />
     </div>
   </div>
 
@@ -27,6 +21,7 @@
 <script>
     import LineBlock from '../LineBlock/LineBlock';
     import Block from '../Block/Block'
+    import { mapGetters } from 'vuex'
 
     export default {
       name: 'List',
@@ -36,6 +31,11 @@
         return {
           isActive: true,
         }
+      },
+      computed: {
+        ...mapGetters({
+          reposData: 'getAllRepos',
+        }),
       },
       methods: {
         // toggleRenderBlock: function () {

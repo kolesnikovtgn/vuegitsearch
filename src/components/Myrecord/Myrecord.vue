@@ -9,16 +9,10 @@
     </span>
     </div>
     <div v-if="isActive" class="list">
-      <Block v-for="repo in reposData" :key="repo.id" />
-      <Block />
-      <Block />
-      <Block />
+      <Block v-for="repo in reposData" :key="repo.id" v-bind="repo" />
     </div>
     <div v-if="!isActive" class="list">
-      <LineBlock />
-      <LineBlock />
-      <LineBlock />
-      <LineBlock />
+      <LineBlock  v-for="repo in reposData" :key="repo.id" v-bind="repo" />
     </div>
   </div>
 </template>

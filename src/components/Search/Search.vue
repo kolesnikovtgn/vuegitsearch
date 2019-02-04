@@ -14,7 +14,6 @@
             <button class="search__btn" @click="searchRequest"><p class="search__btn-text">SEARCH</p></button>
           </div>
     </div>
-    <p v-for="repo in reposData" v-bind:key="repo.id">{{ repo.name }}</p>
       <List />
   </div>
 </template>
@@ -37,9 +36,6 @@
         ...mapGetters({
           reposData: 'getAllRepos',
         }),
-      todo() {
-          return this.$store.getters.getAllRepos;
-      }
     },
     methods: {
       searchRequest() {
