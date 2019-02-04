@@ -23,16 +23,10 @@ export const store = new Vuex.Store({
     set_all_repositories: (state, {reposData}) => {
       Vue.set(state, 'reposData', reposData)
     },
-    toggle_mylist(state, payload) {
-      return {
-        ...state,
-        reposData: state.reposData.map(item =>
-            (item.id === payload.id)
-                ? {...item, myList: !item.myList}
-                : item
-        ),
-      }
-    }
+    toggle_mylist: (state, payload) => {
+      var item = state.reposData.find(repo => repo.id === payload);
+      item.myList = !item.myList;
+    },
   },
   actions: {
     axiosData({ commit }) {

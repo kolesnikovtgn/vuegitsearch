@@ -24,8 +24,8 @@
       </div>
     </div>
     <div class="prj__button container-column">
-      <button v-if="!myList" class="prj__button-add"><p class="prj__button-add-text">ADD TO LIST</p></button>
-      <button v-if="myList" class="prj__button-delete"><p class="prj__button-delete-text"> REMOVE FROM LIST</p></button>
+      <button v-if="!myList" class="prj__button-add" v-on:click="toggleMyList(id)" ><p class="prj__button-add-text">ADD TO LIST</p></button>
+      <button v-if="myList" class="prj__button-delete" v-on:click="toggleMyList(id)" ><p class="prj__button-delete-text"> REMOVE FROM LIST</p></button>
     </div>
   </div>
 
@@ -34,8 +34,13 @@
 <script>
   export default {
     name: 'Block',
-    props: ['name', 'language', 'querySearch',
+    props: ['id', 'name', 'language', 'querySearch',
       'description', 'langSearch', 'stargazers_count', 'myList'],
+    methods: {
+      toggleMyList(id) {
+        this.$store.dispatch('toggle_mylist', id);
+      },
+    },
   }
 </script>
 

@@ -2,8 +2,8 @@
   <div class="project container-row">
     <div class="project__checkimage">
       <div class="project__checkimage-square">
-        <div v-if="myList" class="project__checkimage-image enable"> </div>
-        <div v-if="!myList" class="project__checkimage-image disable"> </div>
+        <div v-if="myList" v-on:click="toggleMyList(id)" class="project__checkimage-image enable"> </div>
+        <div v-if="!myList" v-on:click="toggleMyList(id)" class="project__checkimage-image disable"> </div>
       </div>
     </div>
     <div class="project__text container-column">
@@ -37,8 +37,13 @@
 <script>
   export default {
     name: 'LineBlock',
-    props: ['name', 'language', 'querySearch',
+    props: ['id', 'name', 'language', 'querySearch',
       'description', 'langSearch', 'stargazers_count', 'myList'],
+    methods: {
+      toggleMyList(id) {
+        this.$store.dispatch('toggle_mylist', id);
+      },
+    },
   }
 </script>
 

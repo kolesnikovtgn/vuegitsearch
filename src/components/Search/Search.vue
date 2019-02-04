@@ -20,7 +20,7 @@
 
 <script>
   import List from '../List/List';
-  import { mapGetters } from 'vuex';
+//  import { mapGetters } from 'vuex';
 
   // const params = {
   //   repositories: 'repositories',
@@ -32,11 +32,11 @@
     name: 'Search',
     components: { List },
     props: { },
-    computed: {
-        ...mapGetters({
-          reposData: 'getAllRepos',
-        }),
-    },
+//    computed: {
+//        ...mapGetters({
+//          reposData: 'getAllRepos',
+//        }),
+//    },
     methods: {
       searchRequest() {
         this.$store.dispatch('axiosData');

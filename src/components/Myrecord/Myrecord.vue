@@ -33,7 +33,7 @@
       },
       computed: {
         ...mapGetters({
-          reposData: 'getAllRepos',
+          reposData: 'getMyList',
         }),
       },
       methods: {
