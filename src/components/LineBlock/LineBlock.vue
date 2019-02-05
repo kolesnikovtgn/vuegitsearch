@@ -2,33 +2,33 @@
   <div class="project container-row">
     <div class="project__checkimage">
       <div class="project__checkimage-square">
-        <div class="project__checkimage-image enable"> </div>
-        <div class="project__checkimage-image disable"> </div>
+        <div v-if="myList" v-on:click="toggleMyList(id)" class="project__checkimage-image enable"> </div>
+        <div v-if="!myList" v-on:click="toggleMyList(id)" class="project__checkimage-image disable"> </div>
       </div>
     </div>
     <div class="project__text container-column">
       <div class="project__text-name">
-       Prjname
+       {{name}}
       </div>
       <div class="project__text-describe">
-        PrjDescribe
+        {{description}}
       </div>
       <div class="project__text-taglist container-row">
         <div class="project__text-taglist-tag">
-          Javascript
+          {{langSearch}}
         </div>
         <div class="project__text-taglist-tag">
-          CMS
+          {{querySearch}}
         </div>
       </div>
     </div>
     <div class="project__rating container-column">
       <div class="project__rating-block container-row">
         <img  class="project__rating-block-img" src="../../assets/star.png">
-        <div class="project__rating-block-stars">123</div>
+        <div class="project__rating-block-stars">{{stargazers_count}}</div>
       </div>
       <div class="project__rating-language">
-        Javascript
+        {{language}}
       </div>
     </div>
   </div>
@@ -37,7 +37,13 @@
 <script>
   export default {
     name: 'LineBlock',
-    props: { }
+    props: ['id', 'name', 'language', 'querySearch',
+      'description', 'langSearch', 'stargazers_count', 'myList'],
+    methods: {
+      toggleMyList(id) {
+        this.$store.dispatch('toggle_mylist', id);
+      },
+    },
   }
 </script>
 
