@@ -37,9 +37,6 @@
         }),
       },
       methods: {
-        // toggleRenderBlock: function () {
-        //   this.isActive = !this.isActive;
-        // }
       }
     }
 </script>

@@ -4,12 +4,6 @@ import { Service } from '../api/Service'
 
 Vue.use(Vuex);
 
-// const params = {
-//   repositories: 'repositories',
-//   query: 'cms',
-//   language: 'javascript',
-// }
-
 export const store = new Vuex.Store({
   state: {
     reposData: [],
@@ -29,18 +23,12 @@ export const store = new Vuex.Store({
     },
   },
   actions: {
-    axiosData({ commit }) {
-      Service.axios({
-        repositories: 'repositories',
-        query: 'cms',
-        language: 'javascript',
-      })
+    axiosData({ commit }, data) {
+      Service.axios(data)
           .then(response => {
             commit('set_all_repositories', {
               reposData: response,
             })
-            // eslint-disable-next-line no-console
-            console.log(response);
           });
     },
     toggle_mylist({commit}, data) {
