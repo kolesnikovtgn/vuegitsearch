@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="main">
+      <div class="header container-row">
+        <div class="header__logo container-row">
+          <div class="header__logo-image">
+            <img class="header__logo-image-cat" src="./assets/logo.png">
+            <img class="header__logo-image-search" src="./assets/logo_search.png">
+          </div>
+          <div class="header__logo-text container-column">
+            <div class="header__logo-text-top">GitHub</div>
+            <div class="header__logo-text-down">search</div>
+          </div>
+        </div>
+        <div class="header__nav container-row">
+          <router-link to="/search" class="header__nav-search">Search</router-link>
+          <router-link to="/mylist" class="header__nav-mylist">MyList</router-link>
+        </div>
+      </div>
+      <router-view></router-view>
+      <div class="footer">
+        <div class="footer__text">copyright @lodossteam 2018</div>
+      </div>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  name: 'App',
+  components: { }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import './App.scss';
 </style>
